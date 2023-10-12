@@ -1,5 +1,7 @@
 function init() {
-	new SmoothScroll(document, 100, 10)
+    var sp = '17';
+    var sm = '10';
+	new SmoothScroll(document, sp, sm)
 }
 
 function SmoothScroll(target, speed, smooth) {
@@ -14,7 +16,7 @@ function SmoothScroll(target, speed, smooth) {
 	var frame = target === document.body
 		&& document.documentElement
 		? document.documentElement
-		: target // safari is the new IE
+		: target // safari is the new I
 
 	target.addEventListener('mousewheel', scrolled, { passive: false })
 	target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
@@ -33,11 +35,13 @@ function SmoothScroll(target, speed, smooth) {
 	function normalizeWheelDelta(e) {
 		if (e.detail) {
 			if (e.wheelDelta)
-				return e.wheelDelta / e.detail / 40 * (e.detail > 0 ? 1 : -1) // Opera
+                return e.wheelDelta / e.detail / 40 * (e.detail > 0 ? 1 : -1) // Opera
 			else
-				return -e.detail / 3 // Firefox
+				//return -e.detail / 1 // Firefox
+                return -e.detail / 3 // Firefox
 		} else
-			return e.wheelDelta / 120 // IE,Safari,Chrome
+			//return e.wheelDelta / 88 // IE,Safari,Chrome
+            return e.wheelDelta / 120 // IE,Safari,Chrome
 	}
 
 	function update() {
@@ -277,7 +281,7 @@ function doDesktop() {
 	//addToLayerArray('.section4 .layer_2', { 'z': 100, 'start': 0, 'end': 100 });
 	addToLayerArray('.section4 .layer_2', { 'x': 30, 'y': 20, 'z': -100, 'start': 0, 'end': 100 });
 	addToLayerArray('.section4 .layer_3', { 'x': 30, 'y': -20, 'z': -200, 'start': 0, 'end': 100 });
-	addToLayerArray('.section4 .layer_4', { 'x': -30, 'y': 10, 'z': 300, 'start': 0, 'end': 100 });
+	addToLayerArray('.section4 .layer_4', { 'x': -50, 'y': 10, 'z': 300, 'start': 0, 'end': 100 });
 	addToLayerArray('.section4 .layer_5', { 'x': 30, 'y': -20, 'z': 400, 'start': 0, 'end': 100 });
 	addToLayerArray('.section4 .layer_6', { 'opacity': 1, 'start': 50, 'end': 60 });
 
@@ -374,6 +378,4 @@ $(function () {
 		var st = window.scrollY;
 		processLoop(st);
 	});
-
-
 });

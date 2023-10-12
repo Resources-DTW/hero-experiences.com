@@ -26,7 +26,7 @@
                     <img src="{{ asset('web/img/scene/2a.webp') }}" />
                 </picture>
             </div>
-            <div class="layer layer_2">
+            <div class="layer layer_2 moveupdown">
                 <picture>
                     <source media="(orientation: portrait)" srcset="{{ asset('web/img/scene/2pb.webp') }}">
                     <source media="(orientation: landscape)" srcset="{{ asset('web/img/scene/2b.webp') }}">
@@ -175,7 +175,7 @@
                     <img src="{{ asset('web/img/scene/4c.webp') }}" />
                 </picture>
             </div>
-            <div class="layer layer_4">
+            <div class="layer layer_4 moveupdown_boat">
                 <picture>
                     <source media="(orientation: portrait)" srcset="{{ asset('web/img/scene/4pd.webp') }}">
                     <source media="(orientation: landscape)" srcset="{{ asset('web/img/scene/4d.webp') }}">
